@@ -1,0 +1,560 @@
+@font-face {
+    font-family: 'ArialRounded';
+    font-display: swap;
+    src: url('/fonts/ArialRounded/Arial_Rounded_MT.ttf')
+      format('truetype');
+  }
+  @font-face {
+    font-family: 'ArialRounded';
+    font-display: swap;
+    src: url('/fonts/ArialRounded/Arial-Rounded-MT-Bold.ttf')
+      format('truetype');
+    font-weight: bold;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'ArialRounded', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    font-weight: 300;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+}
+
+  
+  button,
+  input,
+  textarea {
+    font-family: 'ArialRounded', -apple-system, BlinkMacSystemFont,
+      'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  }
+  
+  input:focus,
+  button:focus,
+  textarea:focus {
+    outline: none;
+  }
+  
+  h1,
+  h2 {
+    margin-top: 34px;
+    display: inline-block;
+    padding-bottom: 4px;
+    margin-bottom: 4px;
+    line-height: 1.4em;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: hsl(357, 50%, 22%);
+    margin-top: 1.8rem;
+    margin-bottom: 0em;
+  }
+  
+  h1 {
+    font-size: 34px;
+  }
+  
+  @media only screen and (max-width: 680px) {
+    h1,
+    h2 {
+      letter-spacing: -0.2px;
+    }
+    h1 {
+      font-size: 24px;
+    }
+    h2 {
+      font-size: 20px;
+    }
+  }
+  
+  p {
+    font-size: 18px;
+    line-height: 1.6em;
+    color: hsl(357, 12%, 42%);
+  }
+  
+  @media only screen and (max-width: 680px) {
+    p,
+    li {
+      font-size: 16px;
+    }
+  }
+  
+  ul {
+    font-size: 18px;
+    list-style: none;
+    -webkit-padding-start: 24px;
+  }
+  
+  ol {
+    font-size: 16px;
+    -webkit-padding-start: 24px;
+  }
+  
+  li {
+    line-height: 1.6rem;
+    color: hsl(357, 12%, 42%);
+    margin: 12px 0px;
+  }
+  
+  .features__list li::before {
+    color: hsl(357, 74%, 67%);
+    content: '\2022'; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+  }
+  
+  a {
+    text-decoration: none !important;
+    color: hsl(357, 74%, 67%);
+    font-weight: bold;
+  }
+  
+  .catchcopy__header:after {
+    content: ''; /* This is necessary for the pseudo element to work. */
+    display: block;
+    /* margin: 0 auto; */
+    width: 24px;
+    padding-top: 8px;
+    border-bottom: 4px solid #f05b56;
+    opacity: 0.6;
+  }
+  
+  @keyframes tenmetsu {
+    0% {
+      opacity: 0.01;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.01;
+    }
+  }
+  
+  @keyframes scaleup {
+    0% {
+      transform: scale(0.8);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes expand {
+    0% {
+      transform: scale(1, 0.8);
+      opacity: 0.1;
+    }
+    100% {
+      transform: scale(1, 1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideup {
+    0% {
+      transform: translateY(20px);
+      opacity: 0.2;
+    }
+    60% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideleft {
+    0% {
+      /* transform: translateX(60px) scale(1.2); */
+      transform: translateY(10px) scale(1.1);
+      opacity: 0.2;
+    }
+    100% {
+      transform: translateY(0px) scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .container {
+    max-width: 620px;
+    margin: auto;
+    padding: 0 12px;
+  }
+  
+  .heroimage {
+    margin-top: 30px;
+  }
+  
+  .heroimage__title {
+    display: block;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+  
+  @media only screen and (max-width: 680px) {
+    .heroimage__title {
+      margin-top: 20px;
+      margin-bottom: 0px;
+    }
+  }
+  
+
+  .wrapper {
+    background-color: rgb(240, 91, 86);
+    min-height: 100vh;
+    width: 100%;
+    color: white;
+    transition: background-color 0.5s ease-in-out 0s;
+    padding-bottom: 12px;
+    box-sizing: border-box;
+}
+
+.navbar-wrapper {
+    background-color: inherit;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.logo {
+    display: inline-block;
+    color: white;
+    margin: 0px;
+    padding: 10px 0px;
+    font-size: 20px;
+}
+
+.btn-container {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.logo-icon {
+    width: 20px;
+    margin-right: 4px;
+}
+
+.logo a {
+    color: white;
+}
+
+.navbar-btn {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0.9;
+    background: none rgba(255, 255, 255, 0.2);
+    box-shadow: none;
+    margin-left: 10px;
+    font-size: 13px;
+    padding: 8px 12px;
+    min-width: 70px;
+    border: none;
+    color: white !important;
+}
+
+.btn-icon-navbar {
+    width: 16px;
+}
+
+.icon-btn-wrapper {
+    display: block;
+    margin-left: 4px;
+}
+
+.login-wrapper {
+    position: relative;
+}
+
+.navbar {
+    padding: 0px 12px;
+    max-width: 620px;
+    margin: auto;
+}
+
+.todo-wrapper {
+    text-align: center;
+}
+
+.todo-wrapper-border {
+    background-color: rgba(0, 0, 0, 0.1);
+    height: 1px;
+    margin-bottom: 40px;
+}
+
+.todo-border {
+    height: 3px;
+    background-color: white;
+    border-radius: 100px;
+    transform: translateY(-1px);
+    width: 0%;
+}
+
+.time-wrapper {
+    max-width: 480px;
+    margin: auto;
+}
+
+.time-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px 0px 30px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.time-btn-wrapper {
+    display: inline-flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.time-btn-active {
+    border: none;
+    margin: 0px;
+    border-radius: 4px;
+    font-family: ArialRounded;
+    font-size: 18px;
+    padding: 2px 12px;
+    height: 28px;
+    cursor: pointer;
+    background: none rgba(0, 0, 0, 0.15);
+    box-shadow: none;
+    color: white;
+    opacity: 1;
+    font-weight: 400;
+}
+
+.time-btn {
+    border: none;
+    color: white;
+    margin: 0px;
+    border-radius: 4px;
+    font-family: ArialRounded;
+    font-size: 18px;
+    padding: 2px 12px;
+    height: 28px;
+    cursor: pointer;
+    background: none;
+    box-shadow: none;
+    font-weight: 400;
+}
+
+
+.time-count {
+    font-size: 120px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.time-count-btn {
+    cursor: pointer;
+    border: none;
+    margin: 20px 0px 0px;
+    padding: 0px 12px;
+    border-radius: 4px;
+    box-shadow: rgb(235, 235, 235) 0px 6px 0px;
+    font-family: ArialRounded;
+    font-size: 22px;
+    height: 55px;
+    color: rgb(240, 91, 86);
+    font-weight: bold;
+    width: 200px;
+    background-color: white;
+    transition: color 0.5s ease-in-out 0s;
+}
+
+.active-work {
+    font-size: 13px;
+    margin-bottom: 8px;
+    opacity: 0;
+}
+
+.start-work {
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+    overflow-wrap: break-word;
+}
+
+.task-container {
+    max-width: 480px;
+    margin: 28px auto 42px;
+}
+
+.task-list {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+    padding-bottom: 14px;
+}
+
+.task {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.task-icon-container {
+    position: relative;
+}
+
+.task-btn {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0.9;
+    background: none rgba(255, 255, 255, 0.2);
+    box-shadow: none;
+    margin-left: 10px;
+    font-size: 13px;
+    padding: 8px;
+    min-width: auto;
+    border: none;
+    color: white !important;
+}
+
+.task-icon {
+    width: 16px;
+}
+
+.task-border {
+    border-radius: 4px;
+    opacity: 1;
+    padding: 4px 0px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 20px, rgba(0, 0, 0, 0.1) 0px 3px 6px;
+    display: none;
+    pointer-events: none;
+    position: absolute;
+    background-color: white;
+    transform: translateY(10px);
+    width: 200px;
+    right: 0px;
+    z-index: 1;
+}
+
+.add-task-container {
+    width: 100%;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0.8;
+    margin-top: 12px;
+    border: 2px dashed rgba(255, 255, 255, 0.4);
+}
+
+.add-task-icon {
+    width: 18px;
+    margin-right: 8px;
+    opacity: 0.8;
+}
+
+.add-task {
+    opacity: 0.8;
+    font-weight: bold;
+}
+
+  
+  /** footer */
+  
+  .footer {
+    margin-top: 40px;
+    border-top: 2px solid #efefef;
+    text-align: center;
+    padding-top: 30px;
+    color: hsl(357, 12%, 42%);
+    padding-bottom: 20px;
+  }
+  
+  .footer__sitemap {
+    margin-bottom: 14px;
+  }
+  
+  .footer__sitemap > a {
+    color: hsl(357, 12%, 42%);
+    font-size: 14px;
+    margin: 0px 4px;
+  }
+  
+  .footer__snslinks {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 18px;
+  }
+  
+  .footer__snslinks img {
+    background-color: #999;
+    width: 28px;
+    height: 28px;
+    border-radius: 100px;
+    padding: 6px;
+    margin: 0px 4px;
+    /* margin-bottom: 14px; */
+  }
+  
+  .footer__me {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .footer__me a {
+    opacity: 0.8;
+  }
+  
+  .footer__snslink__ph {
+    display: inline-block;
+    background-color: #999;
+    height: 28px;
+    width: 28px;
+    border-radius: 100px;
+    padding: 6px;
+    margin: 0px 4px;
+  }
+  
+  .footer__snslink__ph a {
+    color: white;
+    font-size: 23px;
+  }
+  
+  .footer__allrights {
+    font-size: 12px;
+    color: hsl(357, 8%, 60%);
+  }
+  
+  
+  
