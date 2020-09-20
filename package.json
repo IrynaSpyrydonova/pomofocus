@@ -1,0 +1,11 @@
+{
+  "name": "starter-basic-import-export",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "HackYourFutureBelgium",
+  "license": "MIT"
+}
