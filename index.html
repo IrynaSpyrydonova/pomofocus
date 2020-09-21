@@ -41,7 +41,7 @@
         <div>
             <div class="todo-wrapper">
               <div class="todo-wrapper-border">
-                <div class="todo-border"></div>
+                <div class="todo-border" id="progress-bar"></div>
               </div>
               <div class="time-wrapper">
                 <div class="time-box">
@@ -51,7 +51,7 @@
                     <button class="time-btn">Long Break</button>
                   </div>
                   <div id="timer-string" class="time-count">25:00</div>
-                  <button color="color="hsl(2, 84%, 64%)" class="time-count-btn">START</button>
+                  <button id="start-btn" color="color="hsl(2, 84%, 64%)" class="time-count-btn">START</button>
                 </div>
                 <div class="active-work">WORKING ON</div>
                 <div class="start-work">Time to work!</div>
@@ -194,6 +194,7 @@
 
   <!-- load your app -->
   <script type='module' src='./src/init.js'></script>
+  <script src="./src/time.js"></script>
 
 </body>
 
