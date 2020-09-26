@@ -12,6 +12,7 @@ export class CountDownTimer {
         this.display = display;
         this.running = false;
         this.bar = bar;
+        this.length = duration;
     }
 
     start () {
@@ -19,7 +20,6 @@ export class CountDownTimer {
         clearInterval(this.startCount);
           return;
         }
-
         this.running = true;
         this.startCount = setInterval(this.timer.bind(this), 1000);
 
@@ -27,20 +27,22 @@ export class CountDownTimer {
 
     timer(){ 
         let diff = --this.duration;
-        
         if(diff < 0){
             clearInterval(this.startCount); 
             return;
         }
         let time = this.parse(diff);
-
-        console.log(diff);
-        let value = Math.round(100 - ((diff*100)/1500));
-        console.log(value);
+        let value = Math.round(100 - ((diff*100)/this.length));
         this.bar.style.width=`${value}%`;
         this.display.innerHTML = time;
         this.remain = this.duration;
         
+    }
+
+    clear () {
+        clearInterval(this.startCount);
+        this.running = false; 
+        this.duration = this.length;
     }
 
     pause () {
