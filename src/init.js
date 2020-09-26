@@ -1,10 +1,9 @@
 'use strict';
-
-import { shortBreakHandler, timeHandler } from './timeHandler.js';
-
-console.log('hello');
+import { timeHandler } from './timeHandler.js';
+import { changeBg } from './handeler/background.js';
 
 const startBtn = document.getElementById('start-btn');
 startBtn.addEventListener('click', timeHandler);
-const shortBreak=document.getElementById('short-break');
-shortBreak.addEventListener('click',shortBreakHandler);
+
+/*Change background color */
+document.getElementsByClassName('time-btn-wrapper')[0].addEventListener('click', changeBg);
