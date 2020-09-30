@@ -1,6 +1,7 @@
 'use strict';
 import { pomoDoroHandler, longBreakHandler, shortBreakHandler, timeHandler, changeActive } from './timeHandler.js';
 import { changeBg } from './handeler/background.js';
+import { addNewTask} from './addNewTask.js';
 
 const startBtn = document.getElementById('start-btn');
 const promoDoro = document.getElementById('pomodoro');
@@ -16,5 +17,7 @@ startBtn.addEventListener('click', timeHandler);
 document.getElementsByClassName('time-btn-wrapper')[0].addEventListener('click', changeBg);
 
 // Clear new instance of the class when you change work or break
-
 document.getElementsByClassName('time-btn-wrapper')[0].addEventListener('click', changeActive);
+
+// add new task
+document.querySelector('.add-task-container').addEventListener('click', addNewTask);
