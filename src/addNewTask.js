@@ -157,7 +157,7 @@ class NewTask {
 
   cancel = ()=> {
     this.button.style.display = "flex";
-    this.form.style.display = "none";
+    this.form.remove()
   }
 
   toggle = (e) => {
