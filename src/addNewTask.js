@@ -1,8 +1,5 @@
 
-const addBtn = document.querySelector('.add-task-container');
-const taskContainer = document.querySelector('.task-container');
-
-class NewTask {
+export class NewTask {
 
   constructor(container, button){
     this.container = container;
@@ -160,12 +157,6 @@ class NewTask {
     this.form.remove()
   }
 
-  toggle = (e) => {
-    if(!this.form.contains(event.target)){
-    this.form.style.display = 'none';
-    this.button.style.display = "flex";
-    }
-  }
   addNewItemHandler = (event) => {
     event.preventDefault();
     if (this.inputActivityTitle.value === "") {
@@ -217,11 +208,6 @@ class NewTask {
 
 
 
-
-export const addNewTask = (event) => { 
-   let newTaskContainer = new NewTask(taskContainer,addBtn );
-    let renderNewTaskContainer = newTaskContainer.render();
-}
 
 
 
