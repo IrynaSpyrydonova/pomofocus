@@ -1,4 +1,5 @@
-import { addNewTask } from "./addNewTasHandler.js";
+import { addNewTask, taskContainer, addBtn } from "./addNewTasHandler.js";
+import {NewTask} from "./addNewTask.js";
 
 export class Task{
 
@@ -7,6 +8,7 @@ constructor(title,note,numberPomodoros){
     this.note=note;
     this.status=false;
     this.numberPomodoros=numberPomodoros;
+    this.button;
 }
 setTitle(title){
     this.title=title;
@@ -21,7 +23,7 @@ changeStatus(){
 setNumberPomodoros(number){
     this.numberPomodoros=number;
 }
-render(){
+render =()=>{
     let divList=document.querySelector('.task-container');
     const titleTask =document.createElement('div');
     
@@ -31,24 +33,46 @@ render(){
     button.addEventListener('click',this.affiche);
     button.src="./../public/assets/icons/vertical-ellipsis.png"
     button.className='button-task';
+    this.button = button;
     titleTask.appendChild(button);
     numberPromo.className='number';
     numberPromo.innerText=this.numberPomodoros;
     titleTask.appendChild(numberPromo);
     if(this.note!==null){
-    const noteTask=document.createElement('p');
-    noteTask.innerText=this.note.value;
-    titleTask.appendChild(noteTask);
+        if(this.note!==""){
+        const noteTask=document.createElement('p');
+        noteTask.innerText=this.note;
+        titleTask.appendChild(noteTask);
+        }
     }
     titleTask.className='task-List'
     divList.appendChild(titleTask);
 
 }
-affiche(){
-      const del=document.createElement('button');
-      del.className='submitBtn'
+affiche = () => {
+    const form = document.querySelector('form');
+    if(document.contains(form)){
+        form.remove();
+        addBtn.style.display = "flex";
+    };
+    let changeTaskContainer = new NewTask(taskContainer, this.button);
+    let renderNewTaskContainer = changeTaskContainer.render();
+    changeTaskContainer.inputActivityTitle.value = this.title;
+    changeTaskContainer.inputEstPomodoro.value = this.numberPomodoros;
+    if(!this.note === ""){
+        changeTaskContainer.textArea.value = this.note;
+        changeTaskContainer.textArea.style.display = 'inline-block';
+        renderNewTaskContainer.addNote.style.display = 'none';
+    } else {
+        changeTaskContainer.textArea.style.display = 'none';
+        renderNewTaskContainer.addNote.style.display = 'inline-block';
+    }
+;
+
+    const del=document.createElement('button');
+    del.className='submitBtn'
     del.innerText='Delete';
-    const div=document.querySelector('.task-List');
+    const div=document.querySelector('.actionBtns');
     div.appendChild(del);
 }
 }

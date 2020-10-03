@@ -1,5 +1,5 @@
 import { Task } from "./task.js";
-
+import { addBtn } from "./addNewTasHandler.js";
 export class NewTask {
 
   constructor(container, button){
@@ -13,6 +13,13 @@ export class NewTask {
   }
 
   render(){
+
+    const formEl = document.querySelector('form');
+    if(document.contains(formEl)){
+        formEl.remove();
+        addBtn.style.display = "flex";
+    };
+
     this.button.style.display = "none";
     const form = document.createElement('form');
     form.className = 'add-task-new-item';
@@ -113,7 +120,13 @@ export class NewTask {
     addNote.className = "addNote";
     addNote.innerHTML = '+ Add Note';
     div.appendChild(addNote);
-    addNote.addEventListener('click', this.addnoteHandler)
+    addNote.addEventListener('click', this.addnoteHandler);
+
+    const textArea = document.createElement('textarea');
+    textArea.id = 'textarea';
+    aaddTaskItemWrapper3.prepend(textArea);
+    textArea.style.display = 'none';
+    this.textArea = textArea;
     
 
     const addProject = document.createElement('button');
@@ -182,30 +195,28 @@ export class NewTask {
   }
 
   submitBtn = (event) => {
-  
+ 
     console.log('new task name: ', this.inputActivityTitle.value);
     console.log('number of est pomodoros:', this.inputEstPomodoro.value);
     const noteValue = document.getElementById('textarea');
-    const task =new Task(this.inputActivityTitle.value,noteValue,this.inputEstPomodoro.value);
+    const task =new Task(this.inputActivityTitle.value,noteValue.value,this.inputEstPomodoro.value);
         task.render();
-    if(document.body.contains(noteValue)){
+    if(document.body.contains(noteValue) && noteValue.value !== ""){
       console.log('notes for new task: ',noteValue.value);
       noteValue.value = "";
       this.noteValue = noteValue;
       this.textArea.style.display ='none';
+      document.getElementById('addNote').style.display="inline-block";
     
     }
     this.inputActivityTitle.value = "";
+    this.inputEstPomodoro.value = "1"
     document.querySelector('.board').style.display = 'block';
   }
 
   addnoteHandler = (event) => {
-    const textArea = document.createElement('textarea');
-    textArea.id = 'textarea'
-    document.getElementById('addFeatures').prepend(textArea);
+    this.textArea.style.display = 'inline-block';
     document.getElementById('addNote').style.display="none";
-    this.textArea = textArea;
-    return textArea;
   }
   
 }
