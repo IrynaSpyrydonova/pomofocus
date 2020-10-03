@@ -436,6 +436,65 @@
 .task-icon {
     width: 16px;
 }
+.task-List{
+width: 100%;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    margin-top: 8px;
+    text-align: left;
+    font-size: 16px;
+    box-sizing: border-box;
+    box-shadow: none;
+    transform: translateY(2px);
+    border-radius: 4px;
+    transition: unset;
+    border-left: 6px solid rgb(34, 34, 34);
+    padding: 10px;
+    
+} 
+.number{
+font-weight: 300;
+-webkit-tap-highlight-color: transparent;
+cursor: pointer;
+  position: absolute;
+  right:  50px;
+font-size: 16px;
+-webkit-box-align: center;
+align-items: center;
+}
+.button-task{
+  cursor: pointer;
+    background-color: white;
+    width: 20px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(223, 223, 223);
+    border-image: initial;
+    border-radius: 4px;
+    padding: 2px 4px;
+    position: absolute;
+    right: 1px;
+}
+p{
+margin: 20px;
+font-weight: 300;
+-webkit-tap-highlight-color: transparent;
+cursor: pointer;
+text-align: left;
+line-height: 1.6em;
+font-size: 15px;
+margin-top: 0px;
+margin-bottom: 0px;
+white-space: pre-wrap;
+background-color: rgb(252, 248, 222);
+color: rgb(96, 85, 21);
+box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 0px;
+word-break: break-word;
+border-radius: 8px;
+padding: 10px 12px;;
+    
+}
 
 .task-border {
     border-radius: 4px;

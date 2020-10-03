@@ -1,3 +1,4 @@
+import { Task } from "./task.js";
 
 export class NewTask {
 
@@ -185,11 +186,14 @@ export class NewTask {
     console.log('new task name: ', this.inputActivityTitle.value);
     console.log('number of est pomodoros:', this.inputEstPomodoro.value);
     const noteValue = document.getElementById('textarea');
+    const task =new Task(this.inputActivityTitle.value,noteValue,this.inputEstPomodoro.value);
+        task.render();
     if(document.body.contains(noteValue)){
       console.log('notes for new task: ',noteValue.value);
       noteValue.value = "";
       this.noteValue = noteValue;
       this.textArea.style.display ='none';
+    
     }
     this.inputActivityTitle.value = "";
     document.querySelector('.board').style.display = 'block';
